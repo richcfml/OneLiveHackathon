@@ -3,13 +3,13 @@
 		{
 			"id": "7272",
 			"location_id": "pk-139",
-			"price": 20.53,
+			"price": 2053,
 			"currency": "EUR"
 		},
 		{
 			"id": "5308",
 			"location_id": "pk-1585",
-			"price": 18.2,
+			"price": 1820,
 			"currency": "EUR"
 		}
 	]

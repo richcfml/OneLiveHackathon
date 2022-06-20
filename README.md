@@ -27,6 +27,6 @@ count => 0
 ```
 id => rate_id
 location_id => provider key + '-' + parking_id (example: pk-139)
-price => parking_rate
+price => parking_rate (should be the smallest currency unit = INT)
 currency => 'EUR' in case of parkimeter, 'USD' in case of parkmobile
 ```
