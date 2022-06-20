@@ -1,0 +1,288 @@
+{
+    "total_count": 2,
+    "count": 2,
+    "items": [
+        {
+            "id": "139",
+            "name": "Brillas (Blanes)",
+            "brand": null,
+            "slug": "brillas",
+            "url": "https://parkimeter.com/en/parking-blanes/parking-brillas",
+            "urls": {
+                "web": "https://parkimeter.com/en/parking-blanes/parking-brillas",
+                "booking_form": "https://parkimeter.com/en/booking/form?parking=139&arrival_date=2022-06-30&arrival_hour=12%3A00&departure_date=2022-07-01&departure_hour=12%3A00"
+            },
+            "available": true,
+            "available_reason": null,
+            "allows_booking": true,
+            "allows_payg": false,
+            "full_now": false,
+            "price": 60,
+            "display_price": 60,
+            "management_fee": 3.5,
+            "daily_rate_type": "24h",
+            "daily_rate_type_trans": "24h",
+            "booking_advance_hours": null,
+            "booking_minimum_hours": 0,
+            "access_type": [
+                "multipass"
+            ],
+            "electronic_toll_collection": false,
+            "address": "Carrer Anselm Clavé, 25",
+            "postal_code": "17300",
+            "address_locality": "Blanes",
+            "entrances": [
+                {
+                    "address": "Carrer Anselm Clavé, 25, Blanes",
+                    "latitude": 41.676337,
+                    "longitude": 2.789064
+                }
+            ],
+            "services": {
+                "always_open": false,
+                "max_height": 2.1,
+                "max_length": 5,
+                "max_width": null,
+                "cashier_floor": 0,
+                "must_leave_keys": "no",
+                "handicap_access": false,
+                "has_electric_charger": false,
+                "has_elevator": false,
+                "has_wc": true,
+                "free_spots_indicators": true,
+                "provides_remote": true,
+                "cover_type": "interior",
+                "electronic_toll_collection": false,
+                "guarded": false
+            },
+            "schedules": [
+                {
+                    "day": "mon",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "20:00"
+                },
+                {
+                    "day": "tue",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "20:00"
+                },
+                {
+                    "day": "wed",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "20:00"
+                },
+                {
+                    "day": "thu",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "20:00"
+                },
+                {
+                    "day": "fri",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "20:00"
+                },
+                {
+                    "day": "sat",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "20:00"
+                },
+                {
+                    "day": "sun",
+                    "open": false,
+                    "opening_hour": "09:00",
+                    "closing_hour": "20:00"
+                },
+                {
+                    "day": "holidays",
+                    "open": false,
+                    "opening_hour": "09:00",
+                    "closing_hour": "20:00"
+                }
+            ],
+            "num_rate_bookings": 1,
+            "rates": [
+                {
+                    "parking_rate": 60,
+                    "management_fee": 3.5,
+                    "access_type": "multipass",
+                    "weekday": null,
+                    "vehicle_type": "car"
+                }
+            ],
+            "transfer": {
+                "type": null,
+                "time": null,
+                "frequency": null,
+                "info": null
+            },
+            "booking_redeem_method": "main_cashier",
+            "terminal": null,
+            "transportation_type": "city",
+            "transportation_extra_fields": [
+                "registration_plate"
+            ],
+            "distance": {
+                "km": 5.071,
+                "walking": 76.1
+            },
+            "locality": {
+                "id": "21",
+                "name": "Blanes",
+                "iata_code": null,
+                "slug": "blanes",
+                "parkings": "2"
+            },
+            "image": {
+                "thumb": "https://media.parkimeter.com/images/parkings/thumb/139-77315a2b13bd3221d3775434acf41079.jpg",
+                "medium": "https://media.parkimeter.com/images/parkings/medium/139-77315a2b13bd3221d3775434acf41079.jpg"
+            }
+        },
+        {
+            "id": "1585",
+            "name": "Centre Comercial Porta Lloret",
+            "brand": null,
+            "slug": "centre-comercial-porta-lloret",
+            "url": "https://parkimeter.com/en/parking-lloret-de-mar/parking-centre-comercial-porta-lloret",
+            "urls": {
+                "web": "https://parkimeter.com/en/parking-lloret-de-mar/parking-centre-comercial-porta-lloret",
+                "booking_form": "https://parkimeter.com/en/booking/form?parking=1585&arrival_date=2022-06-30&arrival_hour=12%3A00&departure_date=2022-07-01&departure_hour=12%3A00"
+            },
+            "available": true,
+            "available_reason": null,
+            "allows_booking": true,
+            "allows_payg": false,
+            "full_now": false,
+            "price": 25,
+            "display_price": 25,
+            "management_fee": 3.5,
+            "daily_rate_type": "24h",
+            "daily_rate_type_trans": "24h",
+            "booking_advance_hours": 48,
+            "booking_minimum_hours": 0,
+            "access_type": [
+                "multipass"
+            ],
+            "electronic_toll_collection": false,
+            "address": "Avinguda Alegries 7-9",
+            "postal_code": "17310",
+            "address_locality": "Lloret de Mar",
+            "entrances": [
+                {
+                    "address": "Avinguda Alegries 7-9, Lloret de Mar",
+                    "latitude": 41.705038,
+                    "longitude": 2.835432
+                }
+            ],
+            "services": {
+                "always_open": false,
+                "max_height": 2,
+                "max_length": 6,
+                "max_width": 2.5,
+                "cashier_floor": 0,
+                "must_leave_keys": "no",
+                "handicap_access": true,
+                "has_electric_charger": true,
+                "has_elevator": true,
+                "has_wc": true,
+                "free_spots_indicators": true,
+                "provides_remote": false,
+                "cover_type": "interior",
+                "electronic_toll_collection": false,
+                "guarded": true
+            },
+            "schedules": [
+                {
+                    "day": "mon",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "21:00"
+                },
+                {
+                    "day": "tue",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "21:00"
+                },
+                {
+                    "day": "wed",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "21:00"
+                },
+                {
+                    "day": "thu",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "21:00"
+                },
+                {
+                    "day": "fri",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "21:00"
+                },
+                {
+                    "day": "sat",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "21:00"
+                },
+                {
+                    "day": "sun",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "14:30"
+                },
+                {
+                    "day": "holidays",
+                    "open": true,
+                    "opening_hour": "09:00",
+                    "closing_hour": "21:00"
+                }
+            ],
+            "num_rate_bookings": 1,
+            "rates": [
+                {
+                    "parking_rate": 25,
+                    "management_fee": 3.5,
+                    "access_type": "multipass",
+                    "weekday": null,
+                    "vehicle_type": "car"
+                }
+            ],
+            "transfer": {
+                "type": null,
+                "time": null,
+                "frequency": null,
+                "info": null
+            },
+            "booking_redeem_method": "license_plate",
+            "terminal": null,
+            "transportation_type": "city",
+            "transportation_extra_fields": [
+                "registration_plate"
+            ],
+            "distance": {
+                "km": 0.24,
+                "walking": 3.6
+            },
+            "locality": {
+                "id": "13",
+                "name": "Lloret de Mar",
+                "iata_code": null,
+                "slug": "lloret-de-mar",
+                "parkings": "1"
+            },
+            "image": {
+                "thumb": "https://media.parkimeter.com/images/parkings/thumb/1585-b069e965a6210931674ac8d7f8fa6eab.jpg",
+                "medium": "https://media.parkimeter.com/images/parkings/medium/1585-b069e965a6210931674ac8d7f8fa6eab.jpg"
+            }
+        }
+    ]
+}

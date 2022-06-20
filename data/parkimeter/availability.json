@@ -1,0 +1,14 @@
+{
+    "locations": [
+        {
+            "id": "pk-139",
+            "available": false,
+            "count": 0
+        },
+        {
+            "id": "pk-1585",
+            "available": true,
+            "count": 100
+        }
+    ]
+}
