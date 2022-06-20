@@ -1,0 +1,52 @@
+{
+    "total_count": 2,
+    "count": 2,
+    "items": [
+        {
+            "rate_id": "7272",
+            "parking_id": "139",
+            "parking_rate": 9.95,
+            "parking_rate_original": 0,
+            "max_days": 0,
+            "max_hours": 6,
+            "management_fee": 1.39,
+            "days": 0,
+            "extra_hours": 1,
+            "vehicle_types": [
+                "car",
+                "motorcycle"
+            ],
+            "access_type": "onepass",
+            "weekday": null,
+            "date_from": "2022-04-25",
+            "date_to": null,
+            "description": "1 h.",
+            "promotion": null
+        },
+        {
+            "rate_id": "5308",
+            "parking_id": "1585",
+            "parking_rate": 22,
+            "parking_rate_original": 22,
+            "max_days": 1,
+            "max_hours": 0,
+            "management_fee": 3.08,
+            "days": 1,
+            "extra_hours": 0,
+            "vehicle_types": [
+                "car",
+                "motorcycle"
+            ],
+            "access_type": "multipass",
+            "weekday": null,
+            "date_from": "2021-12-22",
+            "date_to": null,
+            "description": "1 day",
+            "promotion": null
+        }
+    ],
+    "limit": 20,
+    "offset": 0,
+    "page": 1,
+    "pages": 1
+}
