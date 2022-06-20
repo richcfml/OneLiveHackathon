@@ -95,7 +95,7 @@ paths:
       tags:
       - Locations
       summary: Get the locations that are available to paint the map for a given timestamp
-      operationId: locations
+      operationId: getLocations
       parameters:
       - in: query
         name: country_code
@@ -142,7 +142,7 @@ paths:
       tags:
       - Rates
       summary: Find the rates for the selected location
-      operationId: rates
+      operationId: getRates
       parameters:
       - in: query
         name: location_id
@@ -199,7 +199,7 @@ paths:
       tags:
       - Booking
       summary: API to place a parking order and confirm a booking
-      operationId: booking
+      operationId: postBooking
       parameters:
       - in: query
         name: location_id
@@ -256,7 +256,7 @@ paths:
       tags:
       - Charge
       summary: Send internal call to make the payments
-      operationId: Charge
+      operationId: postCharge
       responses:
         '200':
           description: Alive
@@ -299,10 +299,10 @@ components:
         error:
           type: string
           description: error message
-          example: Error Getting Availability
+          example: Error Getting Information
         error_code:
           type: string
-          description: An error code to give Easypark Availability specific error
+          description: An error code to give Easypark Information specific error
             details
           enum:
           - 'AV-1001: NotAvailable'
