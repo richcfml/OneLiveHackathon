@@ -21,3 +21,12 @@ id => provider key + '-' + id (example: pk-139)
 available => available
 count => 0
 ```
+
+3. Map provider rates data to unified format. Example:
+
+```
+id => rate_id
+location_id => provider key + '-' + parking_id (example: pk-139)
+price => parking_rate
+currency => 'EUR' in case of parkimeter, 'USD' in case of parkmobile
+```
