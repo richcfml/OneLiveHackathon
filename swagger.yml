@@ -1,0 +1,366 @@
+---
+openapi: 3.0.1
+info:
+  title: Reservations/Bookings
+  description: API to work with X in the area
+  version: 1.0.0
+servers:
+- url: https://api.parkmobile.io/availability/v1
+  description: Production (Internal)
+paths:
+  "/availability":
+    x-public: true
+    get:
+      summary: 
+      operationId: getAvailability
+      tags:
+      - Availability
+      parameters:
+      - in: query
+        name: location_id
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: max_lat
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: max_long
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: min_lat
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: min_long
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Response"
+        '400':
+          description: The Input from the user was malformed
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                error: Bad Request Error
+                error_code: AV-1001
+        '401':
+          description: Authorization value is missing for the header or the credentials
+            provided are incorrect
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 401
+                error_message: Authorization Error
+        '403':
+          description: The account specified does not have the required role(s) to
+            access the resource
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 403
+                error_message: Invalid Access Rights Error
+        '404':
+          description: Attempting to access invalid routes
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 404
+                error_message: Page Not Found
+        '500':
+          description: An error occurred on the server. The response body includes
+            details of the specific error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                error: Internal Server Error
+                error_code: AV-1010
+      security:
+      - api_key: []
+      x-codegen-request-body-name: Body
+  "/select":
+    x-public: true
+    get:
+      tags:
+      - Availability
+      summary: Check if the endpoint to get availability is alive
+      operationId: pingAvailability
+      responses:
+        '200':
+          description: Alive
+        '401':
+          description: Authorization value is missing for the header or the credentials
+            provided are incorrect
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 401
+                error_message: Authorization Error
+        '403':
+          description: The account specified does not have the required role(s) to
+            access the resource
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 403
+                error_message: Invalid Access Rights Error
+        '404':
+          description: Attempting to access invalid routes
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 404
+                error_message: Page Not Found
+      security:
+      - api_key: []
+  "/pay":
+    x-public: true
+    get:
+      tags:
+      - Availability
+      summary: Check if the endpoint to get availability is alive
+      operationId: Testing
+      responses:
+        '200':
+          description: Alive
+        '401':
+          description: Authorization value is missing for the header or the credentials
+            provided are incorrect
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 401
+                error_message: Authorization Error
+        '403':
+          description: The account specified does not have the required role(s) to
+            access the resource
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 403
+                error_message: Invalid Access Rights Error
+        '404':
+          description: Attempting to access invalid routes
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 404
+                error_message: Page Not Found
+      security:
+      - api_key: []
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: error message
+          example: Error Getting Availability
+        error_code:
+          type: string
+          description: An error code to give ParkMobile Availability specific error
+            details
+          enum:
+          - 'AV-1001: RequestBodyError'
+          - 'AV-1002: InvalidAction'
+          - 'AV-1003: ItemError'
+          - 'AV-1005: PMUserFailure'
+          - 'AV-1006: ProviderFailure'
+          - 'AV-1007: SpaceDataRequestFailure'
+          - 'AV-1010: FatalError'
+          example: AV-1001
+      title: Error Schema
+    Response:
+      type: object
+      properties:
+        uuid:
+          type: string
+          example: 8800b4b4-4ea6-11ea-91fd-302303742060
+          description: Internal unique identifier
+        spaces:
+          type: array
+          items:
+            type: object
+            properties:
+              location:
+                type: object
+                properties:
+                  lat:
+                    type: number
+                    example: 31.755325
+                    description: the latitude of the given point
+                  lon:
+                    type: number
+                    example: -106.487996
+                    description: the longitude of the given point
+                description: the lat/long of the point
+              is_active:
+                type: boolean
+                example: true
+                description: the availability status of the point
+            description: An array of spaces, with availability status
+        streets:
+          type: array
+          items:
+            type: object
+            properties:
+              state:
+                type: string
+                enum:
+                - Parking Allowed
+                - Parking Not Allowed
+              vector:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    location:
+                      type: object
+                      properties:
+                        lat:
+                          type: number
+                          example: 31.755325
+                          description: the latitude of the given point
+                        lon:
+                          type: number
+                          example: -106.487996
+                          description: the longitude of the given point
+                      description: the lat/long of the point
+              occupancy:
+                type: number
+                example: 81
+                description: The percent likelyhood the street is occupied. The lower
+                  the occupancy, the higher the chance of finding parking.
+            description: An array of spaces representing a street, with availability
+              scores
+        polygons:
+          type: array
+          items:
+            type: object
+            properties:
+              map:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    location:
+                      type: object
+                      properties:
+                        lat:
+                          type: number
+                          example: 31.755325
+                          description: the latitude of the given point
+                        lon:
+                          type: number
+                          example: -106.487996
+                          description: the longitude of the given point
+                      description: the lat/long of the point
+              occupancy:
+                type: number
+                example: 81
+                description: The percent likelyhood the area is occupied. The lower
+                  the occupancy, the higher the chance of finding parking.
+            description: An array of spaces representing a polygon, with availability
+              scores
+        zones:
+          type: array
+          items:
+            type: object
+            properties:
+              internal_zone_code:
+                type: string
+                example: 1234-5678
+                description: the PM specific zone code
+              occupancy:
+                type: number
+                example: 81
+                description: The percent likelyhood the zone is occupied. The lower
+                  the occupancy, the higher the chance of finding parking.
+            description: An array of zones, with availability scores
+        error:
+          type: string
+          description: An error code to give ParkMobile Availability specific error
+            details
+          enum:
+          - 'AV-1001: RequestBodyError'
+          - 'AV-1002: InvalidAction'
+          - 'AV-1003: ItemError'
+          - 'AV-1005: PMUserFailure'
+          - 'AV-1006: ProviderFailure'
+          - 'AV-1007: SpaceDataRequestFailure'
+          - 'AV-1010: FatalError'
+          example: AV-1001
+      title: Availability Response Schema
+  responses:
+    BadRequest:
+      description: 400 - The Input from the user was malformed
+      content:
+        "*/*":
+          schema:
+            "$ref": "#/components/schemas/Error"
+    InternalServerError:
+      description: 500 - An error occurred on the server. The response body includes
+        details of the specific error
+      content:
+        "*/*":
+          schema:
+            "$ref": "#/components/schemas/Error"
+    InvalidRequestRights:
+      description: 403 - The account specified does not have the required role(s)
+        to access the resource
+      content:
+        "*/*":
+          schema:
+            "$ref": "#/components/schemas/Error"
+    NotFound:
+      description: 404 - Attempting to access invalid routes
+      content:
+        "*/*":
+          schema:
+            "$ref": "#/components/schemas/Error"
+    Unauthorized:
+      description: 401 - Authorization value is missing for the header or the credentials
+        provided are incorrect
+      content:
+        "*/*":
+          schema:
+            "$ref": "#/components/schemas/Error"
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
