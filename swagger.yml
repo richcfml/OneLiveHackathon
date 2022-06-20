@@ -312,25 +312,38 @@ components:
     Response:
       type: object
       properties:
-        uuid:
+        id:
           type: string
-          example: 8800b4b4-4ea6-11ea-91fd-302303742060
+          example: pk-139
           description: Internal unique identifier
-        locations:
-          type: array
-          items:
-            type: object
-            properties:
-              internal_location_code:
-                type: string
-                example: 1234-5678
-                description: the specific location code
-              occupancy:
-                type: number
-                example: 81
-                description: The percent likelyhood the location is occupied. The lower
-                  the occupancy, the higher the chance of finding parking.
-            description: An array of locations, with availability
+        name:
+          type: string
+          example: State Farm Arena
+          description: Name of the location
+        address:
+          type: string
+          example: "Carrer Anselm Clavé, 25, Blanes"
+          description: Address of the location
+        latitude:
+          type: string
+          example: 41.676337
+          description: Latitude of the location
+        longitude:
+          type: string
+          example: 2.789064
+          description: Longitude of the location
+        cover_image:
+          type: string
+          example: "https://media.parkimeter.com/images/parkings/medium/139-77315a2b13bd3221d3775434acf41079.jpg"
+          description: Image that can be use in the cover of the site
+        available:
+          type: boolean
+          example: false
+          description: There is availabilty to process a booking
+        count:
+          type: number
+          example: 100
+          description: The amount of spaces that are available
         error:
           type: string
           description: An error code to give Easypark Availability specific error
