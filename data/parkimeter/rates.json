@@ -1,0 +1,26 @@
+{
+  "rates": [
+    {
+    	"id": "7272",
+    	"location_id": "pk-139",
+    	"price": 20.53,
+    	"currency": "EUR",
+    	"vehicle_types": [
+    		"car", "motorcycle"
+    	],
+    	"access_type": "onepass",
+    	"description": "24 hours rate for car or moto"
+    },  
+    {
+    	"id": "5308",
+    	"location_id": "pk-1585",
+    	"price": 18.2,
+    	"currency": "EUR",
+    	"vehicle_types": [
+    		"car", "motorcycle"
+    	],
+    	"access_type": "onepass",
+    	"description": "24 hours rate for car or moto"
+    }
+  ]
+}
