@@ -11,8 +11,6 @@ name => name
 address => entrances[0].address
 latitude => entrances[0].latitude
 longitude => entrances[0].longitude
-distance.km => distance.km
-distance.walking => distance.walking
 cover_image => image.medium
 ```
 
