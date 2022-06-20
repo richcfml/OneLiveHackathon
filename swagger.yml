@@ -11,7 +11,7 @@ paths:
   "/availability":
     x-public: true
     get:
-      summary: 
+      summary: This is the call to find if there are spaces available
       operationId: getAvailability
       tags:
       - Availability
@@ -22,22 +22,22 @@ paths:
         schema:
           type: string
       - in: query
-        name: max_lat
+        name: 
         required: true
         schema:
           type: string
       - in: query
-        name: max_long
+        name: 
         required: true
         schema:
           type: string
       - in: query
-        name: min_lat
+        name: 
         required: true
         schema:
           type: string
       - in: query
-        name: min_long
+        name: 
         required: true
         schema:
           type: string
@@ -99,7 +99,7 @@ paths:
       security:
       - api_key: []
       x-codegen-request-body-name: Body
-  "/select":
+  "/NEW_ENDPOINT":
     x-public: true
     get:
       tags:
