@@ -1,0 +1,15 @@
+[
+    {
+        "id": "139",
+        "name": "Brillas (Blanes)",
+        "address": "Carrer Anselm Clavé, 25, Blanes",
+        "latitude": 41.676337,
+        "longitude": 2.789064,
+        "distance": {
+            "km": 5.071,
+            "walking": 76.1
+        },
+        "cover_image": "https://media.parkimeter.com/images/parkings/medium/139-77315a2b13bd3221d3775434acf41079.jpg",
+        "provider": "parkimeter"
+    }
+]
