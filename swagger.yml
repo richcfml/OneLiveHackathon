@@ -22,25 +22,15 @@ paths:
         schema:
           type: string
       - in: query
-        name: 
+        name: start_time
         required: true
         schema:
           type: string
       - in: query
-        name: 
+        name: stop_time
         required: true
         schema:
-          type: string
-      - in: query
-        name: 
-        required: true
-        schema:
-          type: string
-      - in: query
-        name: 
-        required: true
-        schema:
-          type: string
+          type: string      
       responses:
         '200':
           description: Success
@@ -192,16 +182,11 @@ components:
           example: Error Getting Availability
         error_code:
           type: string
-          description: An error code to give ParkMobile Availability specific error
+          description: An error code to give Easypark Availability specific error
             details
           enum:
-          - 'AV-1001: RequestBodyError'
-          - 'AV-1002: InvalidAction'
-          - 'AV-1003: ItemError'
-          - 'AV-1005: PMUserFailure'
-          - 'AV-1006: ProviderFailure'
-          - 'AV-1007: SpaceDataRequestFailure'
-          - 'AV-1010: FatalError'
+          - 'AV-1001: NotAvailable'
+          - 'AV-1002: PaymentNotAllowed'
           example: AV-1001
       title: Error Schema
     Response:
@@ -211,115 +196,30 @@ components:
           type: string
           example: 8800b4b4-4ea6-11ea-91fd-302303742060
           description: Internal unique identifier
-        spaces:
+        locations:
           type: array
           items:
             type: object
             properties:
-              location:
-                type: object
-                properties:
-                  lat:
-                    type: number
-                    example: 31.755325
-                    description: the latitude of the given point
-                  lon:
-                    type: number
-                    example: -106.487996
-                    description: the longitude of the given point
-                description: the lat/long of the point
-              is_active:
-                type: boolean
-                example: true
-                description: the availability status of the point
-            description: An array of spaces, with availability status
-        streets:
-          type: array
-          items:
-            type: object
-            properties:
-              state:
-                type: string
-                enum:
-                - Parking Allowed
-                - Parking Not Allowed
-              vector:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    location:
-                      type: object
-                      properties:
-                        lat:
-                          type: number
-                          example: 31.755325
-                          description: the latitude of the given point
-                        lon:
-                          type: number
-                          example: -106.487996
-                          description: the longitude of the given point
-                      description: the lat/long of the point
-              occupancy:
-                type: number
-                example: 81
-                description: The percent likelyhood the street is occupied. The lower
-                  the occupancy, the higher the chance of finding parking.
-            description: An array of spaces representing a street, with availability
-              scores
-        polygons:
-          type: array
-          items:
-            type: object
-            properties:
-              map:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    location:
-                      type: object
-                      properties:
-                        lat:
-                          type: number
-                          example: 31.755325
-                          description: the latitude of the given point
-                        lon:
-                          type: number
-                          example: -106.487996
-                          description: the longitude of the given point
-                      description: the lat/long of the point
-              occupancy:
-                type: number
-                example: 81
-                description: The percent likelyhood the area is occupied. The lower
-                  the occupancy, the higher the chance of finding parking.
-            description: An array of spaces representing a polygon, with availability
-              scores
-        zones:
-          type: array
-          items:
-            type: object
-            properties:
-              internal_zone_code:
+              internal_location_code:
                 type: string
                 example: 1234-5678
-                description: the PM specific zone code
+                description: the specific location code
               occupancy:
                 type: number
                 example: 81
-                description: The percent likelyhood the zone is occupied. The lower
+                description: The percent likelyhood the location is occupied. The lower
                   the occupancy, the higher the chance of finding parking.
-            description: An array of zones, with availability scores
+            description: An array of locations, with availability
         error:
           type: string
-          description: An error code to give ParkMobile Availability specific error
+          description: An error code to give Easypark Availability specific error
             details
           enum:
           - 'AV-1001: RequestBodyError'
           - 'AV-1002: InvalidAction'
           - 'AV-1003: ItemError'
-          - 'AV-1005: PMUserFailure'
+          - 'AV-1005: UserFailure'
           - 'AV-1006: ProviderFailure'
           - 'AV-1007: SpaceDataRequestFailure'
           - 'AV-1010: FatalError'
@@ -335,13 +235,6 @@ components:
     InternalServerError:
       description: 500 - An error occurred on the server. The response body includes
         details of the specific error
-      content:
-        "*/*":
-          schema:
-            "$ref": "#/components/schemas/Error"
-    InvalidRequestRights:
-      description: 403 - The account specified does not have the required role(s)
-        to access the resource
       content:
         "*/*":
           schema:
