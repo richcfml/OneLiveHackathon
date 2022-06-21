@@ -406,7 +406,7 @@ components:
         id:
           type: string
           example: pk-139
-          description: Internal unique identifier
+          description: Internal unique identifier (can be used as location_id)
         name:
           type: string
           example: State Farm Arena
@@ -453,6 +453,29 @@ components:
                     description: Vechile types that are allowed to park in the selected location
                 description: Array of vehicle types
             description: Array of vehicle types
+        rate_id:
+          type: string
+          example: pk-7272
+          description: Rate unique identifier
+        customer_id:
+          type: string
+          example: "1"
+          description: Customer unique identifier
+        start_time:
+          type: string
+          example: "2022-06-21T09:00:00Z"
+          description: Booking start time, in ISO 8601 format
+        stop_time:
+          type: string
+          example: "2022-06-21T11:00:00Z"
+          description: Booking stop time, in ISO 8601 format
+        status:
+          type: string
+          description: Booking status
+          enum:
+          - pending
+          - paid
+          example: pending
         error:
           type: string
           description: An error code to give Easypark Availability specific error
