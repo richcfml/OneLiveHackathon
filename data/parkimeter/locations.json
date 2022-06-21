@@ -15,6 +15,14 @@
             "latitude": 41.705038,
             "longitude": 2.835432,
             "cover_image": "https://media.parkimeter.com/images/parkings/medium/1585-b069e965a6210931674ac8d7f8fa6eab.jpg"
+        },
+        {
+            "id": "ringgo-1901",
+            "name": "Central Car Park, Basingstoke",
+            "address": "4 London Street, RG21 7NU",
+            "latitude": 51.26358,
+            "longitude": -1.08507,
+            "cover_image": null
         }
     ]
 }

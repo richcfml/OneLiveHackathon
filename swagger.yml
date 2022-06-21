@@ -1,5 +1,5 @@
 ---
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: Reservations/Bookings
   description: API to work with X in the area
