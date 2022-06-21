@@ -8,6 +8,68 @@ servers:
 - url: https://api.parkmobile.io/availability/v1
   description: Production (Internal)
 paths:
+  "/":
+    x-public: true
+    get:
+      summary: This is the root path
+      operationId: getNothing
+      tags:
+      - root
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Response"
+        '400':
+          description: The Input from the user was malformed
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                error: Bad Request Error
+                error_code: AV-1001
+        '401':
+          description: Authorization value is missing for the header or the credentials
+            provided are incorrect
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 401
+                error_message: Authorization Error
+        '403':
+          description: The account specified does not have the required role(s) to
+            access the resource
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 403
+                error_message: Invalid Access Rights Error
+        '404':
+          description: Attempting to access invalid routes
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                status_code: 404
+                error_message: Page Not Found
+        '500':
+          description: An error occurred on the server. The response body includes
+            details of the specific error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Error"
+              example:
+                error: Internal Server Error
+                error_code: AV-1010
   "/availability":
     x-public: true
     get:
@@ -86,9 +148,6 @@ paths:
               example:
                 error: Internal Server Error
                 error_code: AV-1010
-      security:
-      - api_key: []
-      x-codegen-request-body-name: Body
   "/locations":
     x-public: true
     get:
@@ -134,8 +193,6 @@ paths:
               example:
                 status_code: 404
                 error_message: Page Not Found
-      security:
-      - api_key: []
   "/rates":
     x-public: true
     get:
@@ -165,23 +222,10 @@ paths:
         schema:
           type: string
       - in: query
-        name: streets
+        name: vehicle_types
         required: true
         schema:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-                enum:
-                - car
-                - motorcyle
-                - Standard Auto
-                - Oversized Vehicle
-              example: 
-                vehicle_types: ["car", "motorcycle"]
-              description: Vechile types that are allowed to park in the selected location
+          type: string
       - in: query
         name: access_type
         required: true
@@ -228,8 +272,6 @@ paths:
               example:
                 status_code: 404
                 error_message: Page Not Found
-      security:
-      - api_key: []
   "/booking":
     x-public: false
     post:
@@ -295,8 +337,6 @@ paths:
               example:
                 status_code: 404
                 error_message: Page Not Found
-      security:
-      - api_key: []
   "/charge":
     x-public: false
     post:
@@ -342,8 +382,6 @@ paths:
               example:
                 status_code: 404
                 error_message: Page Not Found
-      security:
-      - api_key: []
 components:
   schemas:
     Error:
@@ -396,7 +434,25 @@ components:
         count:
           type: number
           example: 100
-          description: The amount of spaces that are avai
+          description: The amount of spaces that are available
+        vehicle_types:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    enum: 
+                    - car
+                    - motorcyle
+                    - Standard Auto
+                    - Oversized Vehicle
+                    description: Vechile types that are allowed to park in the selected location
+                description: Array of vehicle types
+            description: Array of vehicle types
         error:
           type: string
           description: An error code to give Easypark Availability specific error
