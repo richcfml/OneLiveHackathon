@@ -1,0 +1,11 @@
+{
+    "booking": {
+        "id": "100000",
+        "location_id": "pk-139",
+        "rate_id": "pk-7272",
+        "customer_id": "1",
+        "start_time": "2022-06-21T09:00:00Z",
+        "stop_time": "2022-06-21T11:00:00Z",
+        "status": "pending"
+    }
+}
