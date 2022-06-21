@@ -14,6 +14,16 @@
             "id": "ringgo-1901",
             "available": true,
             "count": null
-        }
+        },
+      {
+			"id": "pm-12345",
+			"available": true,
+      "count": 10
+		  },
+		  {
+			"id": "pm-98764",
+			"available": true,
+      "count": 1000
+      }
     ]
 }
