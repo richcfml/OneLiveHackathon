@@ -29,4 +29,25 @@ id => rate_id
 location_id => provider key + '-' + parking_id (example: pk-139)
 price => parking_rate (should be the smallest currency unit = INT)
 currency => 'EUR' in case of parkimeter, 'USD' in case of parkmobile
+vehicle_types => vehicle_types
+access_type => access_type
+description => description
+```
+
+List of possible vehicle_types:
+
+```
+PARKIMETER - PARKMOBILE
+car        = vehicle
+motorcycle = motorcycle
+van        = n/a
+n/a        = oversized
+```
+
+List of possible access_type:
+
+```
+PARKIMETER - PARKMOBILE
+onepass    = onepass     (booking is over after stop_time or after the vehicle leaves)
+multipass  = n/a         (booking is over after stop_time)
 ```

@@ -4,13 +4,19 @@
 			"id": "7272",
 			"location_id": "pk-139",
 			"price": 2053,
-			"currency": "EUR"
+			"currency": "EUR",
+			"vehicle_types": ["car", "motorcycle"],
+			"access_type": "onepass",
+			"description": "1 day"
 		},
 		{
 			"id": "5308",
 			"location_id": "pk-1585",
 			"price": 1820,
-			"currency": "EUR"
+			"currency": "EUR",
+			"vehicle_types": ["car", "motorcycle"],
+			"access_type": "multipass",
+			"description": "1 day"
 		}
 	]
 }
