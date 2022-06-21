@@ -145,20 +145,57 @@ paths:
       operationId: getRates
       parameters:
       - in: query
+        name: id
+        required: true
+        schema:
+          type: string
+      - in: query
         name: location_id
         required: true
         schema:
           type: string
       - in: query
-        name: start_time
+        name: price
         required: true
         schema:
           type: string
       - in: query
-        name: stop_time
+        name: currency
         required: true
         schema:
-          type: string 
+          type: string
+      - in: query
+        name: streets
+        required: true
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                enum:
+                - car
+                - motorcyle
+                - Standard Auto
+                - Oversized Vehicle
+              example: 
+                vehicle_types: ["car", "motorcycle"]
+              description: Vechile types that are allowed to park in the selected location
+      - in: query
+        name: access_type
+        required: true
+        schema:
+          type: string
+        example: "onepass"
+        description: The permission to enter or not more than once per session
+      - in: query
+        name: description
+        required: true
+        schema:
+          type: string
+        example: "This is the possible wording for the rate provided by the operator"
+        description: Parameter to hold additional text that the provider may want to add to their rate
       responses:
         '200':
           description: Alive
@@ -343,7 +380,7 @@ components:
         count:
           type: number
           example: 100
-          description: The amount of spaces that are available
+          description: The amount of spaces that are avai
         error:
           type: string
           description: An error code to give Easypark Availability specific error

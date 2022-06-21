@@ -17,6 +17,24 @@
 			"vehicle_types": ["car", "motorcycle"],
 			"access_type": "multipass",
 			"description": "1 day"
+		},
+		{
+			"id": "7272",
+			"location_id": "pm-12345",
+			"price": 5400,
+			"currency": "USD",
+			"vehicle_types": ["Standard Auto", "Oversized Vehicle"],
+			"access_type": "onepass",
+			"description": "Single parking for specific lot area"
+		},
+		{
+			"id": "5308",
+			"location_id": "pm-98764",
+			"price": 1820,
+			"currency": "USD",
+			"vehicle_types": ["Standard Auto"],
+			"access_type": "onepass",
+			"description": "Default parking rate for Product"
 		}
 	]
 }
