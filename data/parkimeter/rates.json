@@ -35,6 +35,15 @@
 			"vehicle_types": ["Standard Auto"],
 			"access_type": "onepass",
 			"description": "Default parking rate for Product"
+		},
+		{
+			"id": "8000",
+			"location_id": "ringgo-333892",
+			"price": 1500,
+			"currency": "GBP",
+			"vehicle_types": ["car"],
+			"access_type": null,
+			"description": "All day 24 hours"
 		}
 	]
 }
