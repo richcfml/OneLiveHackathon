@@ -231,7 +231,7 @@ paths:
       security:
       - api_key: []
   "/booking":
-    x-public: true
+    x-public: false
     post:
       tags:
       - Booking
@@ -250,6 +250,16 @@ paths:
           type: string
       - in: query
         name: stop_time
+        required: true
+        schema:
+          type: string 
+      - in: query
+        name: rate_id
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: customer_id
         required: true
         schema:
           type: string 
@@ -294,6 +304,12 @@ paths:
       - Charge
       summary: Send internal call to make the payments
       operationId: postCharge
+      parameters:
+      - in: query
+        name: booking_id
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Alive
